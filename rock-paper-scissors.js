@@ -41,7 +41,21 @@ let playerSelection = "PaPeR";
 let computerSelection = "ScisSors";
 
 playerSelection = firstOnlyCapital(playerSelection);
-computerSelection = firstOnlyCapital(computerSelection)
+computerSelection = firstOnlyCapital(computerSelection);
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+
+
+    return (playerWins > computerWins) ? `You win!!!` : 'You lose.. Try again.';
+
+    // console.log(playRound(playerSelection, computerSelection));
+    // console.log(playRound(playerSelection, computerSelection));
+    // console.log(playRound(playerSelection, computerSelection));
+    // console.log(playRound(playerSelection, computerSelection));
+    // console.log(playRound(playerSelection, computerSelection));
+}
+console.log(game());
+
 
