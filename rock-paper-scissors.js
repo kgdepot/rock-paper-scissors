@@ -1,9 +1,5 @@
-function computerPlay () {
-    const randomNum3 = Math.floor(Math.random()*3);
-    
-    // console.log(randomNum3);
-    // console.log(typeof randomNum3);
-
+function computerPlay() {
+    const randomNum3 = Math.floor(Math.random() * 3);
     if (randomNum3 === 0) {
         return "Rock";
     } else if (randomNum3 === 1) {
@@ -12,49 +8,49 @@ function computerPlay () {
         return "Scissors";
     }
 }
-// console.log(computerPlay()); 
-
-//e.g. playerSelection = 'Rock'  'rOcK'
-//     computerSelection = 'Scissors' 
-
-function playRound (playerSelection, computerSelection) {
-
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "Tie! No one wins..";
-    } else if ( playerSelection === "Rock" && computerSelection === "Scissors" ||
-    playerSelection === "Scissors" && computerSelection === "Paper"  || 
-    playerSelection === "Paper" && computerSelection === "Rock") {
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors" ||
+        playerSelection === "Scissors" && computerSelection === "Paper" ||
+        playerSelection === "Paper" && computerSelection === "Rock") {
         return `You win! ${playerSelection} beats ${computerSelection}`;
     } else {
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
-
-function firstOnlyCapital (inputString) {
+function firstOnlyCapital(inputString) {
     const inputLowercase = inputString.toLowerCase();
-    const inputFirstPart = inputLowercase.slice(0,1).toUpperCase();
+    const inputFirstPart = inputLowercase.slice(0, 1).toUpperCase();
     const inputSecondPart = inputLowercase.slice(1);
     return inputFirstPart + inputSecondPart;
 }
-
-let playerSelection = "PaPeR";
-playerSelection = firstOnlyCapital(playerSelection);
-
-let computerSelection = computerPlay();
-
-console.log("player selected", playerSelection);
-console.log("pc selected", computerSelection);
-
-
-
 function game() {
-    let playerWins = 0;
-    let computerWins = 0;
+    let playerWinsCount = 0;
+    let computerWinsCount = 0;
+    let result = "";
+    //-----------game 1 --------------
+    let playerSelection = "PaPeR";
+    playerSelection = firstOnlyCapital(playerSelection);
+    let computerSelection = computerPlay();
 
-    console.log(playRound(playerSelection, computerSelection));
-    
+    console.log("player selected", playerSelection);
+    console.log("pc selected", computerSelection);
 
-    return (playerWins > computerWins) ? `You win!!!` : 'You lose.. Try again.';
+    result = playRound(playerSelection, computerSelection);
+    console.log(result);
+    //---------------------------------
+    // result = playRound(playerSelection, computerSelection);
+    // console.log(result);
+    // result = playRound(playerSelection, computerSelection);
+    // console.log(result);
+    // result = playRound(playerSelection, computerSelection);
+    // console.log(result);
+    // result = playRound(playerSelection, computerSelection);
+
+
+
+    return (playerWinsCount > computerWinsCount) ? `You win!!!` : 'You lose.. Try again.';
 
     // console.log(playRound(playerSelection, computerSelection));
     // console.log(playRound(playerSelection, computerSelection));
