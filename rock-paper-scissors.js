@@ -19,13 +19,17 @@ function computerPlay () {
 
 
 function playRound (playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) return "Tie";
-    // else if ( playerSelection === "Rock" && computerSelection === "Scissors" ||
-    // playerSelection === "Scissors" && computerSelection === "Paper"  || 
-    // playerSelection === "Paper" && computerSelection === "Rock") {
-    //     return `You win! ${playerSelection} beats ${computerSelection}`;
+    if (playerSelection === computerSelection) {
+        return "Tie! No one wins..";
+    } else if ( playerSelection === "Rock" && computerSelection === "Scissors" ||
+    playerSelection === "Scissors" && computerSelection === "Paper"  || 
+    playerSelection === "Paper" && computerSelection === "Rock") {
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    } else {
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
+}
 
 const playerSelection = "Rock";
-const computerSelection = "Rock";
+const computerSelection = "Scissors";
 console.log(playRound(playerSelection, computerSelection));
