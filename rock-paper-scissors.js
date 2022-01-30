@@ -38,19 +38,24 @@ function firstOnlyCapital (inputString) {
 }
 
 let playerSelection = "PaPeR";
-let computerSelection = "ScisSors";
-
 playerSelection = firstOnlyCapital(playerSelection);
-computerSelection = firstOnlyCapital(computerSelection);
+
+let computerSelection = computerPlay();
+
+console.log("player selected", playerSelection);
+console.log("pc selected", computerSelection);
+
+
 
 function game() {
     let playerWins = 0;
     let computerWins = 0;
 
+    console.log(playRound(playerSelection, computerSelection));
+    
 
     return (playerWins > computerWins) ? `You win!!!` : 'You lose.. Try again.';
 
-    // console.log(playRound(playerSelection, computerSelection));
     // console.log(playRound(playerSelection, computerSelection));
     // console.log(playRound(playerSelection, computerSelection));
     // console.log(playRound(playerSelection, computerSelection));
