@@ -10,13 +10,16 @@ function computerPlay() {
 }
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "Tie! No one wins..";
+        return 0;
+        // return "Tie! No one wins..";
     } else if (playerSelection === "Rock" && computerSelection === "Scissors" ||
         playerSelection === "Scissors" && computerSelection === "Paper" ||
         playerSelection === "Paper" && computerSelection === "Rock") {
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+        return 1;
+        // return `You win! ${playerSelection} beats ${computerSelection}`;
     } else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return -1;
+        // return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
 function firstOnlyCapital(inputString) {
@@ -26,37 +29,25 @@ function firstOnlyCapital(inputString) {
     return inputFirstPart + inputSecondPart;
 }
 function game() {
-    let playerWinsCount = 0;
-    let computerWinsCount = 0;
-    let result = "";
-    //-----------game 1 --------------
-    let playerSelection = "PaPeR";
-    playerSelection = firstOnlyCapital(playerSelection);
-    let computerSelection = computerPlay();
+    let result = 0;
+    let computerSelection
+    let playerSelection
 
-    console.log("player selected", playerSelection);
-    console.log("pc selected", computerSelection);
-
-    result = playRound(playerSelection, computerSelection);
-    console.log(result);
-    //---------------------------------
-    // result = playRound(playerSelection, computerSelection);
-    // console.log(result);
-    // result = playRound(playerSelection, computerSelection);
-    // console.log(result);
-    // result = playRound(playerSelection, computerSelection);
-    // console.log(result);
-    // result = playRound(playerSelection, computerSelection);
-
-
-
-    return (playerWinsCount > computerWinsCount) ? `You win!!!` : 'You lose.. Try again.';
-
-    // console.log(playRound(playerSelection, computerSelection));
-    // console.log(playRound(playerSelection, computerSelection));
-    // console.log(playRound(playerSelection, computerSelection));
-    // console.log(playRound(playerSelection, computerSelection));
+    for (i=1; i<=5; i++) {
+        computerSelection = computerPlay();
+        playerSelection = prompt("Choose: Rock, Paper, Scissors", "Rock");
+        playerSelection = firstOnlyCapital(playerSelection);
+    
+        console.log("player selected", playerSelection);
+        console.log("pc selected", computerSelection);
+    
+        result += playRound(playerSelection, computerSelection);
+        console.log(result);
+    }
+  
+    if (result === 0) return `Tie.`;
+    return (result > 0) ? `You win!!!` : 'You lose.. Try again.';
 }
-console.log(game());
+alert(game());
 
 
