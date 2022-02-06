@@ -97,7 +97,7 @@ function showSelectionAndScore() {
 
 const gameBtns = document.querySelectorAll('.gameButtons > button');
 
-gameBbtns.forEach(btn => btn.addEventListener('click', showSelectionAndScore));
+gameBtns.forEach(btn => btn.addEventListener('click', showSelectionAndScore));
 // alert(game());
 
 
