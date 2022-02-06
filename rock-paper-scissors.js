@@ -48,6 +48,18 @@ function game() {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!!!` : 'You lose.. Try again.';
 }
-alert(game());
+
+const btns = document.querySelectorAll('button');
+btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        let playerSelection = btn.classList.toString(); 
+        playerSelection = firstOnlyCapital(playerSelection);
+    
+        console.log("player selected", playerSelection);
+
+    })});
+console.log(btns);
+
+// alert(game());
 
 
