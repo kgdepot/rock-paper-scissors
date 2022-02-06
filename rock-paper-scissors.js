@@ -10,16 +10,13 @@ function computerPlay() {
 }
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return 0;
-        // return "Tie! No one wins..";
+        return 0; //tie
     } else if (playerSelection === "Rock" && computerSelection === "Scissors" ||
         playerSelection === "Scissors" && computerSelection === "Paper" ||
         playerSelection === "Paper" && computerSelection === "Rock") {
-        return 1;
-        // return `You win! ${playerSelection} beats ${computerSelection}`;
+        return 1; //user wins
     } else {
-        return -1;
-        // return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return -1; //pc wins
     }
 }
 function firstOnlyCapital(inputString) {
@@ -52,26 +49,28 @@ function getResult(result) {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!` : 'You lose..';
 }
-function showSelectionScore() {
-    let result = 0;
+function showSelectionAndScore() {
     let playerSelection = this.classList.toString(); 
     playerSelection = firstOnlyCapital(playerSelection);
     computerSelection = computerPlay();
 
-    const displayChoices = document.querySelector('.displayChoices');
+    const showPlayerSelection = document.querySelector('.playerSelection');
+    const showPcSelection = document.querySelector('.pcSelection');
+    showPlayerSelection.textContent = playerSelection;
+    showPcSelection.textContent = computerSelection;
 
-    displayChoices.setAttribute('style', 'white-space: pre;')
-    displayChoices.textContent = "Player selected: " + playerSelection + "\r\n"
-                            + "Pc selected: " + computerSelection
-
-    result += playRound(playerSelection, computerSelection);
-    
-    const score = document.querySelector('.score');
-    score.textContent = +score.textContent + result;
-
+    let result = 0;
+    result = playRound(playerSelection, computerSelection);
     const showWinner = document.querySelector('.winner');
     showWinner.textContent = getResult(result);
-    
+    if (result === 1) {
+        const userScore = document.querySelector('.userScore');
+        userScore.textContent = +userScore.textContent + 1;
+    } else if (result === -1) {
+        const pcScore = document.querySelector('.pcScore');
+        pcScore.textContent = +pcScore.textContent + 1
+    } 
+ 
     let roundCount = document.querySelector('.roundCount');
     if (roundCount.textContent === 5) ;
     roundCount.textContent = +roundCount.textContent + 1;
@@ -79,7 +78,7 @@ function showSelectionScore() {
 
 const btns = document.querySelectorAll('button');
 
-btns.forEach(btn => btn.addEventListener('click', showSelectionScore));
+btns.forEach(btn => btn.addEventListener('click', showSelectionAndScore));
 // alert(game());
 
 
