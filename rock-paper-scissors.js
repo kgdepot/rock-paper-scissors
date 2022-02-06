@@ -49,9 +49,7 @@ function getResult(result) {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!` : 'You lose..';
 }
-function removeBtnListener () {
-    btns.forEach(btn => btn.removeEventListener());
-}
+
 
 
 function showSelectionAndScore() {
@@ -74,7 +72,7 @@ function showSelectionAndScore() {
         if (userScore.textContent == 5) {
             showWinner.style.cssText = 'color: blue; background: white';  
             //disable event listeners on buttons
-            btns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
+            gameBtns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
         }
 
     } else if (result === -1) {
@@ -82,7 +80,7 @@ function showSelectionAndScore() {
         pcScore.textContent = +pcScore.textContent + 1;
         if (pcScore.textContent == 5)  {
             showWinner.style.cssText = 'color: blue; background: white'; 
-            btns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
+            gameBtns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
         }
 
     } 
