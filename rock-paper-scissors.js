@@ -35,7 +35,7 @@ function game() {
 
     for (i=1; i<=5; i++) {
         computerSelection = computerPlay();
-        playerSelection = prompt("Choose: Rock, Paper, Scissors", "Rock");
+        let playerSelection = btn.classList.toString(); 
         playerSelection = firstOnlyCapital(playerSelection);
     
         console.log("player selected", playerSelection);
@@ -48,17 +48,56 @@ function game() {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!!!` : 'You lose.. Try again.';
 }
+function getResult(result) {
+    if (result === 0) return `Tie.`;
+    return (result > 0) ? `You win!!!` : 'You lose.. Try again.';
+}
+
 
 const btns = document.querySelectorAll('button');
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
+        let result = 0;
         let playerSelection = btn.classList.toString(); 
         playerSelection = firstOnlyCapital(playerSelection);
+        computerSelection = computerPlay();
     
-        console.log("player selected", playerSelection);
+
+        // let h1 = document.createElement("h1");
+        // //setting this css style solving problem with new line in textContent
+        // h1.setAttribute('style', 'white-space: pre;');
+        // //add \r\n in text everywhere You want for line-break (new line)
+        // h1.textContent = "This is a very long string and I would like to insert a carriage return \r\n...";
+        // h1.textContent += "moreover, I would like to insert another carriage return \r\n...";
+        // h1.textContent += "so this text will display in a new line";
+        
+        // document.body.appendChild(h1);
+
+
+        const displayChoices = document.querySelector('.displayChoices');
+        displayChoices.setAttribute('style', 'white-space: pre;')
+        displayChoices.textContent = "Player selected: " + playerSelection + "\r\n"
+                                + "Pc selected: " + computerSelection
+
+
+
+
+        // console.log("player selected", playerSelection);
+        // console.log("pc selected", computerSelection);
+
+        result += playRound(playerSelection, computerSelection);
+        
+        const score = document.querySelector('.score');
+        // console.log(score);
+        score.textContent = +score.textContent + result;
+
+        console.log(result);
+
+
+
+        console.log(getResult(result));
 
     })});
-console.log(btns);
 
 // alert(game());
 
