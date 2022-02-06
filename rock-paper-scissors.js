@@ -66,13 +66,23 @@ function showSelectionAndScore() {
     if (result === 1) {
         const userScore = document.querySelector('.userScore');
         userScore.textContent = +userScore.textContent + 1;
+        if (userScore.textContent == 5) {
+            showWinner.style.cssText = 'color: blue; background: white';  
+            //disable event listeners
+            
+        }
+
     } else if (result === -1) {
         const pcScore = document.querySelector('.pcScore');
-        pcScore.textContent = +pcScore.textContent + 1
+        pcScore.textContent = +pcScore.textContent + 1;
+        if (pcScore.textContent == 5) 
+        showWinner.style.cssText = 'color: blue; background: white'; 
     } 
  
     let roundCount = document.querySelector('.roundCount');
-    if (roundCount.textContent === 5) ;
+    console.log(roundCount.textContent == 5);
+    console.log(typeof roundCount)
+
     roundCount.textContent = +roundCount.textContent + 1;
 }
 
