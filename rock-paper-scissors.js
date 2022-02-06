@@ -49,6 +49,11 @@ function getResult(result) {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!` : 'You lose..';
 }
+function removeBtnListener () {
+    btns.forEach(btn => btn.removeEventListener());
+}
+
+
 function showSelectionAndScore() {
     let playerSelection = this.classList.toString(); 
     playerSelection = firstOnlyCapital(playerSelection);
@@ -68,16 +73,20 @@ function showSelectionAndScore() {
         userScore.textContent = +userScore.textContent + 1;
         if (userScore.textContent == 5) {
             showWinner.style.cssText = 'color: blue; background: white';  
-            //disable event listeners
-            
+            //disable event listeners on buttons
+            btns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
         }
 
     } else if (result === -1) {
         const pcScore = document.querySelector('.pcScore');
         pcScore.textContent = +pcScore.textContent + 1;
-        if (pcScore.textContent == 5) 
-        showWinner.style.cssText = 'color: blue; background: white'; 
+        if (pcScore.textContent == 5)  {
+            showWinner.style.cssText = 'color: blue; background: white'; 
+            btns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
+        }
+
     } 
+    
  
     let roundCount = document.querySelector('.roundCount');
     console.log(roundCount.textContent == 5);
@@ -86,9 +95,9 @@ function showSelectionAndScore() {
     roundCount.textContent = +roundCount.textContent + 1;
 }
 
-const btns = document.querySelectorAll('button');
+const gameBtns = document.querySelectorAll('.gameButtons > button');
 
-btns.forEach(btn => btn.addEventListener('click', showSelectionAndScore));
+gameBbtns.forEach(btn => btn.addEventListener('click', showSelectionAndScore));
 // alert(game());
 
 
