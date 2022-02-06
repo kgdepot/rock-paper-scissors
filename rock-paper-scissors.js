@@ -52,42 +52,34 @@ function getResult(result) {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!` : 'You lose..';
 }
-function buttonClick() {
+function showSelectionScore() {
     let result = 0;
     let playerSelection = this.classList.toString(); 
     playerSelection = firstOnlyCapital(playerSelection);
     computerSelection = computerPlay();
 
-    // you can improve it by appendingChild paragraph x2
     const displayChoices = document.querySelector('.displayChoices');
 
     displayChoices.setAttribute('style', 'white-space: pre;')
     displayChoices.textContent = "Player selected: " + playerSelection + "\r\n"
                             + "Pc selected: " + computerSelection
 
-    // console.log("player selected", playerSelection);
-    // console.log("pc selected", computerSelection);
-
     result += playRound(playerSelection, computerSelection);
     
     const score = document.querySelector('.score');
-    // console.log(score);
     score.textContent = +score.textContent + result;
 
     const showWinner = document.querySelector('.winner');
     showWinner.textContent = getResult(result);
-    // console.log(result);
-    // console.log(getResult(result));
     
     let roundCount = document.querySelector('.roundCount');
     if (roundCount.textContent === 5) ;
     roundCount.textContent = +roundCount.textContent + 1;
 }
 
-
 const btns = document.querySelectorAll('button');
 
-btns.forEach(btn => btn.addEventListener('click', buttonClick));
+btns.forEach(btn => btn.addEventListener('click', showSelectionScore));
 // alert(game());
 
 
