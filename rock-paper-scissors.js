@@ -25,32 +25,11 @@ function firstOnlyCapital(inputString) {
     const inputSecondPart = inputLowercase.slice(1);
     return inputFirstPart + inputSecondPart;
 }
-function game() {
-    let result = 0;
-    let computerSelection
-    let playerSelection
 
-    for (i=1; i<=5; i++) {
-        computerSelection = computerPlay();
-        let playerSelection = btn.classList.toString(); 
-        playerSelection = firstOnlyCapital(playerSelection);
-    
-        console.log("player selected", playerSelection);
-        console.log("pc selected", computerSelection);
-    
-        result += playRound(playerSelection, computerSelection);
-        console.log(result);
-    }
-  
-    if (result === 0) return `Tie.`;
-    return (result > 0) ? `You win!!!` : 'You lose.. Try again.';
-}
 function getResult(result) {
     if (result === 0) return `Tie.`;
     return (result > 0) ? `You win!` : 'You lose..';
 }
-
-
 
 function showSelectionAndScore() {
     let playerSelection = this.classList.toString(); 
@@ -82,14 +61,9 @@ function showSelectionAndScore() {
             showWinner.style.cssText = 'color: blue; background: white'; 
             gameBtns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
         }
-
     } 
-    
  
     let roundCount = document.querySelector('.roundCount');
-    console.log(roundCount.textContent == 5);
-    console.log(typeof roundCount)
-
     roundCount.textContent = +roundCount.textContent + 1;
 }
 
