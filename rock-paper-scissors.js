@@ -1,11 +1,9 @@
 function computerPlay() {
-    const randomNum3 = Math.floor(Math.random() * 3);
-    if (randomNum3 === 0) {
-        return "Rock";
-    } else if (randomNum3 === 1) {
-        return "Paper";
-    } else {
-        return "Scissors";
+    const randomNum012 = Math.floor(Math.random() * 3);
+    switch (randomNum012) {
+        case 0 : return "Rock";
+        case 1 : return "Paper";
+        case 2 : return "Scissors";
     }
 }
 function playRound(playerSelection, computerSelection) {
@@ -20,15 +18,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 function firstOnlyCapital(inputString) {
-    const inputLowercase = inputString.toLowerCase();
-    const inputFirstPart = inputLowercase.slice(0, 1).toUpperCase();
-    const inputSecondPart = inputLowercase.slice(1);
-    return inputFirstPart + inputSecondPart;
+    return inputString.charAt(0).toUpperCase() + inputString.slice(1);
 }
 
-function getResult(result) {
-    if (result === 0) return `Tie.`;
-    return (result > 0) ? `You win!` : 'You lose..';
+function getTextResult(result) {
+    switch (result) {
+        case -1 : return 'You lose.';
+        case 0 : return 'Tie.';
+        case 1 : return 'You win!';
+    }
 }
 
 function showSelectionAndScore() {
@@ -44,7 +42,7 @@ function showSelectionAndScore() {
     let result = 0;
     result = playRound(playerSelection, computerSelection);
     const showWinner = document.querySelector('.winner');
-    showWinner.textContent = getResult(result);
+    showWinner.textContent = getTextResult(result);
     if (result === 1) {
         const userScore = document.querySelector('.userScore');
         userScore.textContent = +userScore.textContent + 1;
