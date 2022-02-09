@@ -49,7 +49,7 @@ function showSelectionAndScore() {
         const userScore = document.querySelector('.userScore');
         userScore.textContent = +userScore.textContent + 1;
         if (userScore.textContent == 5) {
-            showWinner.style.cssText = 'color: blue; background: white';  
+            showWinner.style.cssText = 'font-weight:bold';  
             //disable event listeners on buttons
             gameBtns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
         }
@@ -58,7 +58,7 @@ function showSelectionAndScore() {
         const pcScore = document.querySelector('.pcScore');
         pcScore.textContent = +pcScore.textContent + 1;
         if (pcScore.textContent == 5)  {
-            showWinner.style.cssText = 'color: blue; background: white'; 
+            showWinner.style.cssText = 'font-weight:bold'; 
             gameBtns.forEach(btn => btn.removeEventListener('click', showSelectionAndScore));
         }
     } 

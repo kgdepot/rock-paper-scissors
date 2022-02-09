@@ -12,22 +12,21 @@
 
 <body>
     <header>
-        <h1>
+        <h1 class="h1Header">
             <span>🗿Rock</span>
             <span>📄Paper</span>
             <span>✂Scissors</span>
         </h1>
-        <h4>First to 5 wins!</h4>
+        <h4>Try to beat the machine. First to 5 wins!</h4>
     </header>
     <main>
-        <p>You are playing against the computer.</p>
         <div>Round <span class="roundCount">1</span>:</div>
         <div class="gameButtons">
             <button class="rock">🗿</button>
             <button class="paper">📄</button>
             <button class="scissors">✂</button>
         </div>
-        <p><strong>Player selected: </strong> <span class="playerSelection"> </span></p>
+        <p><strong>You selected: </strong> <span class="playerSelection"> </span></p>
         <p><strong>Pc selected: </strong> <span class="pcSelection"> </span></p>
         <div class="displayChoices"></div>
         <p>Your score : <span class="userScore"></span></p>
@@ -35,9 +34,9 @@
         <div class="score"></div>
         <div class="winner"></div>
         <button onClick="window.location.reload();">Play again.</button>
-
     </main>
     <footer>
+        Copyright © The Odin Project 2021
     </footer>
 
 </body>
