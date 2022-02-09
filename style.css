@@ -41,6 +41,9 @@ main {
     line-height: 2.8;
     text-align: center;
 }
+.roundCount {
+    padding-left: 5px;
+}
 .winner {
     padding-left: 10px;
 }
