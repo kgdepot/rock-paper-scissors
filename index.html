@@ -6,41 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="./rock-paper-scissors.js" defer></script>
 </head>
 
 <body>
-    <p>You are playing against the computer.</p>
-    <p>First one to score 5 wins.</p>
-    <div>Round <span class="roundCount">1</span>:</div>
-    <div class="gameButtons">
-        <button class="rock">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
-    </div>
-    <p><strong>Player selected: </strong> <span class="playerSelection"> </span></p>
-    <p><strong>Pc selected: </strong> <span class="pcSelection"> </span></p>
-    <div class="displayChoices"></div>
-    <p>Your score : <span class="userScore"></span></p>
-    <p>Computer score : <span class="pcScore"></span></p>
-    <div class="score"></div>
-    <div class="winner"></div>
-    <button onClick="window.location.reload();">Play again.</button>
+    <header>
+        <h1>
+            <span>🗿Rock</span>
+            <span>📄Paper</span>
+            <span>✂Scissors</span>
+        </h1>
+        <h4>First to 5 wins!</h4>
+    </header>
+    <main>
+        <p>You are playing against the computer.</p>
+        <div>Round <span class="roundCount">1</span>:</div>
+        <div class="gameButtons">
+            <button class="rock">🗿</button>
+            <button class="paper">📄</button>
+            <button class="scissors">✂</button>
+        </div>
+        <p><strong>Player selected: </strong> <span class="playerSelection"> </span></p>
+        <p><strong>Pc selected: </strong> <span class="pcSelection"> </span></p>
+        <div class="displayChoices"></div>
+        <p>Your score : <span class="userScore"></span></p>
+        <p>Computer score : <span class="pcScore"></span></p>
+        <div class="score"></div>
+        <div class="winner"></div>
+        <button onClick="window.location.reload();">Play again.</button>
+
+    </main>
+    <footer>
+    </footer>
 
 </body>
 
 </html>
-<!-- 
-
-In our UI, the player should be able to play the game by clicking on 
-buttons rather than typing their answer in a prompt.
-For now, remove the logic that plays exactly five rounds.
-Create three buttons, one for each selection. Add an event listener 
-to the buttons that call your playRound function with the correct 
-playerSelection every time a button is clicked. (you can keep the console.logs for this step)
-Add a div for displaying results and change all of your console.logs 
-into DOM methods.
-Display the running score, and announce a winner of the game once 
-one player reaches 5 points.
-
- -->
