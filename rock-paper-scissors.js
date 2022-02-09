@@ -36,6 +36,8 @@ const userScore = document.querySelector('.userScore');
 const pcScore = document.querySelector('.pcScore');
 
 
+
+
 function updateGame() {
     const playerSelection = this.classList.toString(); 
     const computerSelection = computerPlay();
@@ -43,17 +45,17 @@ function updateGame() {
     showPlayerSelection.textContent = playerSelection;
     showPcSelection.textContent = computerSelection;
 
-    let result = 0;
-    result = playRound(playerSelection, computerSelection);
-    showWinner.textContent = getTextResult(result);
-    if (result === 1) {
+    let roundResult = 0;
+    roundResult = playRound(playerSelection, computerSelection);
+    showWinner.textContent = getTextResult(roundResult);
+    if (roundResult === 1) {
         userScore.textContent = +userScore.textContent + 1;
         if (userScore.textContent == 5) {
             showWinner.style.cssText = 'font-weight:bold';  
             //disable event listeners on buttons
             gameBtns.forEach(btn => btn.removeEventListener('click', updateGame));
         }
-    } else if (result === -1) {
+    } else if (roundResult === -1) {
         pcScore.textContent = +pcScore.textContent + 1;
         if (pcScore.textContent == 5)  {
             showWinner.style.cssText = 'font-weight:bold'; 
