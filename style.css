@@ -1,6 +1,9 @@
 
 
-html { background-color: rgb(240, 209, 209); } 
+html { 
+    font-family: Josefin Sans,sans-serif;
+
+} 
 body {
     min-height: 100vh;
     max-width: 800px;
@@ -19,16 +22,35 @@ header > *  {
     margin: 0;
     text-align: center;
 }
+.h1Header > span {
+    padding: 0 10px;
+}
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.rounds {
+    font-weight: 600;
+    color: #000000d1;
+    font-size: 21px;
+    line-height: 2.8;
+    text-align: center;
+}
 .gameButtons > button {
     padding: 20px 10px;
     margin: auto 20px;
     font-size: 100px;
+    background-color: antiquewhite ;
 }
+button {
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+.playAgainBtn {
+    padding: 10px 20px;
+}
+
 
 
 footer { 
