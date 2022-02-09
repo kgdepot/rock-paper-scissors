@@ -20,7 +20,10 @@
         <h4>Try to beat the machine. First to 5 wins!</h4>
     </header>
     <main>
-        <div class="rounds">ROUND <span class="roundCount">1</span>:</div>
+        <div class="rounds">
+            ROUND <span class="roundCount">1</span> :
+            <span class="winner"></span>
+        </div>
         <div class="gameButtons">
             <button class="rock">🗿</button>
             <button class="paper">📄</button>
@@ -29,10 +32,10 @@
         <p><strong>You selected: </strong> <span class="playerSelection"> </span></p>
         <p><strong>Pc selected: </strong> <span class="pcSelection"> </span></p>
         <div class="displayChoices"></div>
-        <p>Your score : <span class="userScore"></span></p>
-        <p>Computer score : <span class="pcScore"></span></p>
+        <p>Your score : <span class="userScore">0</span></p>
+        <p>Computer score : <span class="pcScore">0</span></p>
         <div class="score"></div>
-        <div class="winner"></div>
+        
         <button class="playAgainBtn" onClick="window.location.reload();">Play again.</button>
     </main>
     <footer>

@@ -31,17 +31,27 @@ main {
     align-items: center;
 }
 .rounds {
+    display: flex;
+    margin-left: 85px;
+    width: 220px;
+
     font-weight: 600;
     color: #000000d1;
     font-size: 21px;
     line-height: 2.8;
     text-align: center;
 }
+.winner {
+    padding-left: 10px;
+}
 .gameButtons > button {
     padding: 20px 10px;
     margin: auto 20px;
     font-size: 100px;
     background-color: antiquewhite ;
+}
+.gameButtons > button:hover {
+    transform: scale(1.1);
 }
 button {
     background-color: antiquewhite;

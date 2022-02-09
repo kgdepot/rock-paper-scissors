@@ -68,6 +68,3 @@ function showSelectionAndScore() {
 const gameBtns = document.querySelectorAll('.gameButtons > button');
 
 gameBtns.forEach(btn => btn.addEventListener('click', showSelectionAndScore));
-// alert(game());
-
-
