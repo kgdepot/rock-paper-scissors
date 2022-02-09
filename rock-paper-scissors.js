@@ -30,8 +30,8 @@ function getTextResult(result) {
 }
 
 function showSelectionAndScore() {
+    
     let playerSelection = this.classList.toString(); 
-    playerSelection = firstOnlyCapital(playerSelection);
     computerSelection = computerPlay();
 
     const showPlayerSelection = document.querySelector('.playerSelection');
