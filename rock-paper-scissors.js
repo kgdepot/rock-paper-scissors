@@ -1,3 +1,4 @@
+//game logic
 function computerPlay() {
     const randomNum012 = Math.floor(Math.random() * 3);
     switch (randomNum012) {
@@ -23,6 +24,7 @@ function firstOnlyCapital(inputString) {
     return inputString.charAt(0).toUpperCase() + inputString.slice(1);
 }
 
+
 const showPlayerSelection = document.querySelector('.playerSelection');
 const showPcSelection = document.querySelector('.pcSelection');
 const showWinner = document.querySelector('.winner');
@@ -39,16 +41,30 @@ function updateScore(playerScore) {
         gameBtns.forEach(btn => btn.removeEventListener('click', updateRound));
     }
 }
+//UI
+function getSymbol(selection) {
+    switch (selection) {
+        case 'Rock': return '🗿';
+        case 'Paper' : return '📄';
+        case 'Scissors' : return '✂';
+    }
+}
 
 function updateRound() {
     const playerSelection = this.classList.toString();
     const computerSelection = computerPlay();
 
-    showPlayerSelection.textContent = playerSelection;
-    showPcSelection.textContent = computerSelection;
+    showPlayerSelection.textContent = getSymbol(playerSelection);
+    showPcSelection.textContent = getSymbol(computerSelection);
 
     showWinner.textContent = playRound(playerSelection, computerSelection);
     roundCount.textContent = +roundCount.textContent + 1;
 }
+function appendDate() {
+    document.querySelector('#date').textContent = new Date().getFullYear();
+    // return new Date()
+}
 
+appendDate();
 gameBtns.forEach(btn => btn.addEventListener('click', updateRound));
+
