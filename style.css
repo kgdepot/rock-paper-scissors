@@ -79,6 +79,7 @@ button {
 .playAgainBtn {
     padding: 10px 20px;
 }
+a {     text-decoration:none;}
 
 footer {
     padding: 10px 0;
