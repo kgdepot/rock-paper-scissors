@@ -29,17 +29,20 @@
             <button class="Paper">📄</button>
             <button class="Scissors">✂</button>
         </div>
-        <p><strong>You selected: </strong> <span class="playerSelection"> </span></p>
-        <p><strong>Pc selected: </strong> <span class="pcSelection"> </span></p>
-        <div class="displayChoices"></div>
-        <p>Your score : <span class="userScore">0</span></p>
-        <p>Computer score : <span class="pcScore">0</span></p>
-        <div class="score"></div>
-        
-        <button class="playAgainBtn" onClick="window.location.reload();">Play again.</button>
+        <div class="displayChoices">
+            <p><strong>You selected: </strong> <span class="playerSelection"> </span></p>
+            <p><strong>Machine selected: </strong> <span class="pcSelection"> </span></p>
+        </div>
+        <div class="score">
+            <p>Your score : <span class="userScore">0</span></p>
+            <p>Computer score : <span class="pcScore">0</span></p>
+        </div>
+
+        <button class="playAgainBtn" onClick="window.location.reload();">New game</button>
     </main>
     <footer>
-        Copyright © The Odin Project <script>document.write(new Date().getFullYear())</script>
+        Copyright © The Odin Project
+        <script>document.write(new Date().getFullYear())</script>
     </footer>
 
 </body>

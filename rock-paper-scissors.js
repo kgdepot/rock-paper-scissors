@@ -16,7 +16,7 @@ function playRound(playerSelection, computerSelection) {
         return 'You win'; 
     } else {
         updateScore(pcScore);
-        return 'PC wins'; 
+        return 'Machine wins'; 
     }
 }
 function firstOnlyCapital(inputString) {
