@@ -26,9 +26,7 @@ header>* {
     padding: 0 10px;
 }
 
-main {
-    padding-top: 20px;
-}
+
 .displayChoices > span {
     padding: 0 5px;
     font-size: 1.3em;
@@ -41,13 +39,14 @@ main {
 
 .winner {
     padding-left: 10px;
+    height: 31.2px;
 }
 .score, .rounds {
     margin: 40px 0;
     border: 1px solid;
     padding: 20px 0;
     text-align: center;
-    background-color: antiquewhite;
+    background-color: #fff7ec;
     border-radius: 5px;
     font-size: x-large;
 }
@@ -59,7 +58,7 @@ main {
 .gameButtons>button {
     padding: 20px 20px;
     font-size: 100px;
-    background-color: antiquewhite;
+    background-color: #fff7ec;
 }
 
 .gameButtons>button:hover {
@@ -67,7 +66,7 @@ main {
 }
 
 button {
-    background-color: antiquewhite;
+    background-color: #fff7ec;
     border-radius: 10px;
 }
 #newGame {

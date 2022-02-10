@@ -32,6 +32,8 @@ const roundCount = document.querySelector('.roundCount');
 const userScore = document.querySelector('.userScore');
 const pcScore = document.querySelector('.pcScore');
 const gameBtns = document.querySelectorAll('.gameButtons > button');
+const roundContainer = document.querySelector('.rounds');
+
 let rndCount = 0;
 
 function updateScore(playerScore) {
