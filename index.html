@@ -29,6 +29,7 @@
             <button class="Paper">📄</button>
             <button class="Scissors">✂</button>
         </div>
+
         <div class="displayChoices">
             <p><strong>You selected: </strong> <span class="playerSelection"> </span></p>
             <p><strong>Machine selected: </strong> <span class="pcSelection"> </span></p>
@@ -38,8 +39,11 @@
             <p>Computer score : <span class="pcScore">0</span></p>
         </div>
 
-        <button class="playAgainBtn" onClick="window.location.reload();">New game</button>
+
     </main>
+    <div id="newGame">
+        <button class="playAgainBtn" onClick="window.location.reload();">New game</button>
+    </div>
     <footer>
         Copyright © The Odin Project <span id="date"></span>
     </footer>
