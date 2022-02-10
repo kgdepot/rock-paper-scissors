@@ -13,7 +13,6 @@ body {
     background: -webkit-linear-gradient(top, #B8D4FF 0%, #7EA5F7 60%, #217FBF 100%);
     background: linear-gradient(to bottom, #B8D4FF 0%, #7EA5F7 60%, #217FBF 100%);
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -76,6 +75,7 @@ button {
 
 
 footer {
+    margin-top: auto;
     padding: 10px 0;
     color: white;
     text-align: center;
