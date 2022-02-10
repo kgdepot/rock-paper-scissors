@@ -32,11 +32,13 @@ const roundCount = document.querySelector('.roundCount');
 const userScore = document.querySelector('.userScore');
 const pcScore = document.querySelector('.pcScore');
 const gameBtns = document.querySelectorAll('.gameButtons > button');
+let rndCount = 0;
 
 function updateScore(playerScore) {
     playerScore.textContent = +playerScore.textContent + 1;
     if (playerScore.textContent == 5) {
         showWinner.style.cssText = 'font-weight:bold';
+
         //disable event listeners on buttons
         gameBtns.forEach(btn => btn.removeEventListener('click', updateRound));
     }
@@ -49,6 +51,10 @@ function getSymbol(selection) {
         case 'Scissors' : return '✂';
     }
 }
+function updateDomRound() {
+    //Update round number after first click;
+    (rndCount > 0) ? roundCount.textContent = ++rndCount : rndCount++;
+}
 
 function updateRound() {
     const playerSelection = this.classList.toString();
@@ -58,7 +64,8 @@ function updateRound() {
     showPcSelection.textContent = getSymbol(computerSelection);
 
     showWinner.textContent = playRound(playerSelection, computerSelection);
-    roundCount.textContent = +roundCount.textContent + 1;
+    updateDomRound();
+
 }
 function appendDate() {
     document.querySelector('#date').textContent = new Date().getFullYear();

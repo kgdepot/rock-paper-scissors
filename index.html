@@ -17,30 +17,32 @@
             <span>📄Paper</span>
             <span>✂Scissors</span>
         </h1>
-        <h4>Try to beat the machine. First to 5 wins!</h4>
+        <h4>Against the machine. First to 5 wins!</h4>
     </header>
     <main>
         <div class="rounds">
-            ROUND <span class="roundCount">0</span> :
-            <div class="displayChoices">
+            ROUND <span class="roundCount">1</span> :
+            <span class="displayChoices">
                 <span class="playerSelection"></span>
                 <span class="pcSelection"></span>
-            </div>        
-            <span class="winner"></span>
- 
+            </span>
+            <div class="winner">Round winner</div>
         </div>
 
-        <div class="score"> 
-            <span>Score: </span>
-            <span class="userScore">0</span> - <span class="pcScore">0</span>
-        </div>
+
+
         <div class="gameButtons">
             <button class="Rock">🗿</button>
             <button class="Paper">📄</button>
             <button class="Scissors">✂</button>
         </div>
+        <div class="score">
+            <span>Score </span>
+            <img src="./img/user.png" height="32px">
+            <span class="userScore">0</span> - <span class="pcScore">0</span>
+            <img src="./img/pc.png" height="32px">
+        </div>
 
- 
     </main>
     <div id="newGame">
         <button class="playAgainBtn" onClick="window.location.reload();">New game</button>
